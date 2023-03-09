@@ -1,16 +1,30 @@
 import {Box, Button, Stack, TextField, Typography} from '@mui/material';
+import {useState} from 'react';
 
 export default function HomePage() {
+  const [ttnValue, setTtnValue] = useState('');
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log(ttnValue);
+  };
+
   return (
     <Stack gap={2}>
       <Typography variant="h2" component="h1" textAlign='center'>
         Відстежити посилку
       </Typography>
 
-      <Stack direction="row" alignItems='center' spacing={2}>
-        <TextField/>
-        <Button variant="outlined">Get status TTN</Button>
-      </Stack>
+      <form onSubmit={onSubmit}>
+        <Stack direction="row" alignItems='center' spacing={2}>
+          <TextField
+            label='TTN'
+            value={ttnValue}
+            onChange={({target}) => setTtnValue(target.value)}
+          />
+          <Button variant="outlined" type='submit'>Get status TTN</Button>
+        </Stack>
+      </form>
 
       <Stack direction="row" gap={3}>
         <Box sx={{
