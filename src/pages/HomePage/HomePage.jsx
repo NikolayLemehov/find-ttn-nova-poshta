@@ -1,12 +1,15 @@
 import {Box, Button, Stack, TextField, Typography} from '@mui/material';
 import {useState} from 'react';
+import {useGetTtnMutation} from '../../store/ttn.api';
 
 export default function HomePage() {
   const [ttnValue, setTtnValue] = useState('');
+  const [getTtn, resultGetTtn] = useGetTtnMutation();
+  console.log(resultGetTtn);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(ttnValue);
+    getTtn('59000935407810');
   };
 
   return (
