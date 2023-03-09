@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/find-ttn-nova-poshta/static/css/main.acf257d4.css",
-    "main.js": "/find-ttn-nova-poshta/static/js/main.3d623352.js",
+    "main.js": "/find-ttn-nova-poshta/static/js/main.8c3d4cd0.js",
     "index.html": "/find-ttn-nova-poshta/index.html",
     "main.acf257d4.css.map": "/find-ttn-nova-poshta/static/css/main.acf257d4.css.map",
-    "main.3d623352.js.map": "/find-ttn-nova-poshta/static/js/main.3d623352.js.map"
+    "main.8c3d4cd0.js.map": "/find-ttn-nova-poshta/static/js/main.8c3d4cd0.js.map"
   },
   "entrypoints": [
     "static/css/main.acf257d4.css",
-    "static/js/main.3d623352.js"
+    "static/js/main.8c3d4cd0.js"
   ]
 }
