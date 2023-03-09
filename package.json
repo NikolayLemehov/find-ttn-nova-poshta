@@ -2,6 +2,7 @@
   "name": "find-ttn-nova-poshta",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://NikolayLemehov.github.io/find-ttn-nova-poshta/",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
