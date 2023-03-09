@@ -4,7 +4,9 @@ import {Box, Button, Container, Stack, TextField, Typography} from '@mui/materia
 function App() {
   return (
     <Container maxWidth="xl">
-      <Stack gap={2}>
+      <Stack
+        gap={2}
+      >
         <Typography variant="h2" component="h1">
           Відстежити посилку
         </Typography>
