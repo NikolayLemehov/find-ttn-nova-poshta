@@ -38,6 +38,5 @@ const persistConfig = {
 ttnSlice.persistedReducer = persistReducer(persistConfig, ttnSlice.reducer);
 // export const phonebookReducer = ttnSlice.reducer;
 
-// export const getTtnHistory = state => state.history;
 
 export default ttnSlice;

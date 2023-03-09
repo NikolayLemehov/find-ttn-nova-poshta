@@ -11,7 +11,6 @@ export const ttnApi = createApi({
   endpoints: (builder) => ({
     getTtn: builder.mutation({
       query: (ttnValue) => {
-        console.log('query ttnValue::', ttnValue);
         return ({
           url: '/',
           method: 'POST',
@@ -33,8 +32,6 @@ export const ttnApi = createApi({
   }),
 });
 
-// Export hooks for usage in function components, which are
-// auto-generated based on the defined endpoints
 export const {
   useGetTtnMutation,
 } = ttnApi;
