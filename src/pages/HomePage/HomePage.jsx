@@ -3,6 +3,7 @@ import {useState} from 'react';
 import {useGetTtnMutation} from '../../store/ttn/ttn.api';
 import {useSelector} from 'react-redux';
 import {ttnHistorySelector} from '../../store/ttn/ttn.selector';
+import * as S from './HomePage.styled';
 
 export default function HomePage() {
   const [ttnValue, setTtnValue] = useState('');
@@ -35,15 +36,14 @@ export default function HomePage() {
         </Stack>
       </form>
 
-      <Stack direction="row" gap={3}>
+      <S.HistoryStack gap={3}>
         <Box sx={{
           flexGrow: 1,
-          width: 300,
-          minHeight: 300,
+          minHeight: 150,
           p: 2,
           border: '1px dashed grey',
         }}>
-          {resultGetTtn?.data?.data[0] && <>
+          {resultGetTtn?.data?.data[0] && <Stack gap={1}>
             <Typography>
               <b>Статус доставки:</b> {Status}
             </Typography>
@@ -57,14 +57,15 @@ export default function HomePage() {
                 <b>Отримано:</b> {WarehouseRecipient}
               </Typography>
             }
-          </>}
+          </Stack>}
         </Box>
-        <Box sx={{
-          width: 500,
-          minHeight: 300,
-          p: 2,
-          border: '1px dashed grey',
-        }}>
+        <S.HistoryBox
+          sx={{
+            minHeight: 300,
+            p: 2,
+            border: '1px dashed grey',
+          }}
+        >
           <Typography variant='h4' component='h2' marginBottom={2}>
             Історія
           </Typography>
@@ -91,8 +92,8 @@ export default function HomePage() {
                 >copy</Button>
               </ButtonGroup>)}
           </Stack>
-        </Box>
-      </Stack>
+        </S.HistoryBox>
+      </S.HistoryStack>
     </Stack>
   );
 }
