@@ -5,12 +5,17 @@ import {useGetTtnMutation} from '../../store/ttn.api';
 export default function HomePage() {
   const [ttnValue, setTtnValue] = useState('');
   const [getTtn, resultGetTtn] = useGetTtnMutation();
-  console.log(resultGetTtn);
+  console.log(resultGetTtn?.data);
 
   const onSubmit = (e) => {
     e.preventDefault();
     getTtn('59000935407810');
   };
+
+  const {
+    WarehouseSender, WarehouseRecipient, Status,
+  } = resultGetTtn?.data?.data[0] ?? {};
+  console.log({WarehouseSender, WarehouseRecipient});
 
   return (
     <Stack gap={2}>
@@ -37,7 +42,19 @@ export default function HomePage() {
           p: 2,
           border: '1px dashed grey',
         }}>
-          <Typography>something</Typography>
+          {resultGetTtn?.data?.data[0] &&
+            <>
+              <Typography>
+                <b>Статус доставки:</b> {Status}
+              </Typography>
+              <Typography>
+                <b>Відправлено:</b> {WarehouseSender}
+              </Typography>
+              <Typography>
+                <b>Отримано:</b> {WarehouseRecipient}
+              </Typography>
+            </>
+          }
         </Box>
         <Box sx={{
           width: 500,
